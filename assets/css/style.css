@@ -1,0 +1,272 @@
+/* ===================================================================
+   GLOBAL THEME SETTINGS
+   =================================================================== */
+:root {
+  --bg-dark: #0e1420;
+  --bg-card: #101a2b;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --text: #e8eef7;
+  --muted: #97a3b4;
+
+  --radius: 14px;
+  --transition: 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  background: linear-gradient(180deg, #061024, var(--bg-dark));
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  padding-top: 70px;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Paragraphs */
+p {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* Images */
+img {
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+/* ===================================================================
+   NAVIGATION (Bootstrap Override)
+   =================================================================== */
+.custom-nav {
+  background: #0b1220 !important;
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.55);
+}
+
+.navbar-brand {
+  color: var(--accent) !important;
+  font-size: 1.45rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  color: var(--muted) !important;
+  font-size: 1.05rem;
+  margin-left: 20px;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+  transform: translateY(-2px);
+}
+
+/* ===================================================================
+   HERO SECTION
+   =================================================================== */
+.hero {
+  height: 92vh;
+  background: url('../img/hero-bg.jpg') center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero .btn-primary {
+  background: var(--accent);
+  border: none;
+  padding: 12px 28px;
+  font-size: 1.2rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.hero .btn-primary:hover {
+  background: var(--accent-hover);
+  transform: scale(1.08);
+}
+
+/* ===================================================================
+   ABOUT SECTION
+   =================================================================== */
+#about img {
+  width: 100%;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+}
+
+#about p {
+  margin-bottom: 12px;
+}
+
+/* ===================================================================
+   SKILL BARS
+   =================================================================== */
+.skillbar {
+  width: 65%;
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.skillbar span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 5px;
+  transition: width 1s ease;
+}
+
+/* ===================================================================
+   PROJECT CARDS
+   =================================================================== */
+.project-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: none;
+  padding-bottom: 8px;
+  transition: var(--transition);
+  color: var(--text);
+}
+
+.project-card img {
+  height: 200px;
+  width: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 14px 30px rgba(0,0,0,0.5);
+}
+
+.project-card h5 {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Buttons override */
+.project-card .btn-outline-primary {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.project-card .btn-outline-primary:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.project-card .btn-primary {
+  background: var(--accent);
+  border: none;
+}
+
+.project-card .btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+/* ===================================================================
+   CONTACT FORM
+   =================================================================== */
+#contact input,
+#contact textarea {
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  background: #fff;
+  transition: var(--transition);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(56,189,248,0.4);
+}
+
+#contact button {
+  background: var(--accent);
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+#contact button:hover {
+  background: var(--accent-hover);
+  transform: scale(1.02);
+}
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+footer {
+  background: #000814;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 15px 0;
+}
+
+/* ===================================================================
+   RESPONSIVE BREAKPOINTS
+   =================================================================== */
+@media (max-width: 992px) {
+  .skillbar {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .skillbar {
+    width: 100%;
+  }
+
+  #about p {
+    font-size: 0.95rem;
+  }
+}
